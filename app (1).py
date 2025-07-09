@@ -13,7 +13,7 @@ df = pd.read_csv(url)
 
 # Combine year and month into a single date column
 df['month'] = df['month'].astype(str)
-df['date'] = pd.to_datetime(df['month'] + ' ' + df['year'].astype(str), format='%b %Y')
+df['date'] = pd.to_datetime(df['month'])
 df = df[['date', 'passengers']]
 df.columns = ['ds', 'y']  # Prophet expects columns 'ds' and 'y'
 
